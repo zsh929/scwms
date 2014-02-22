@@ -1,0 +1,89 @@
+#sddm
+{	margin: 0px;
+	padding: 0;
+	z-index: 30}
+
+
+
+#sddm .month ,.function ,.button
+{	display: block;
+	
+	padding: 2px 12px 1px 5px;
+	border:1px solid #bbb;
+	background: #eee;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: bold;
+	background-image: url("down.gif") ;
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+#sddm .function
+{	
+	padding: 3px 12px 1px 5px;
+	
+	background-image: url("down.gif") ;
+	background-repeat: no-repeat;
+	background-position: center right ;
+	
+}
+#sddm .button
+{	
+	padding: 3px 5px 1px 5px;
+	
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-position: 37px 8px;
+}
+#sddm a:hover
+{	background: #ffffff;
+	
+	border: 1px solid #bbb;
+	background-image: url("down.gif") ;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+#sddm a.button:hover
+{	background: #ffffff;
+	
+	border: 1px solid #C8C8C8;
+	background-image: none ;
+}
+
+
+#sddm div
+{	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 2px;
+	background: #E8E8E8;
+	border: 1px solid #C8C8C8;
+	width:248px;
+	}
+
+	#sddm div a
+	{	position: relative;
+		display: block;
+		margin: 1px;
+		padding: 5px 5px;
+		width: 68px;
+		float:left;
+		white-space: nowrap;
+		text-align: center;
+		text-decoration: none;
+		background: #FFF;
+		border: 1px solid #909090;
+		color: #4D4D4D;
+		font: 12px arial}
+
+	#sddm div a:hover
+	{	background: #DBF0FF;
+		border: 1px solid #909090;
+		color: #000;
+		font-weight: bold;
+		width: 68px;
+		display: block;
+		float:left;}

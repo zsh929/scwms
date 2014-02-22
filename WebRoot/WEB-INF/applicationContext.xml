@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://localhost/scwmsdb?useUnicode=true&amp;characterEncoding=utf-8"></property>
+		<property name="username" value="root"></property>
+		
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/sclk/scwms/model/Syscode.hbm.xml</value>
+				<value>com/sclk/scwms/model/Warehouse.hbm.xml</value>
+				<value>com/sclk/scwms/model/Cargo.hbm.xml</value>
+				<value>com/sclk/scwms/model/Customer.hbm.xml</value>
+				<value>com/sclk/scwms/model/Contract.hbm.xml</value>
+				<value>com/sclk/scwms/model/StockRecord.hbm.xml</value>
+				<value>com/sclk/scwms/model/Users.hbm.xml</value>
+				<value>com/sclk/scwms/model/CargoRecord.hbm.xml</value>
+				<value>com/sclk/scwms/model/MonthTotal.hbm.xml</value>
+				<value>com/sclk/scwms/model/Location.hbm.xml</value>
+				<value>
+					com/sclk/scwms/model/MonthWarehouse.hbm.xml
+				</value>
+				<value>com/sclk/scwms/model/TagsCargo.hbm.xml</value>
+				<value>com/sclk/scwms/model/Tags.hbm.xml</value>
+				
+				<value>
+					com/sclk/scwms/model/PostionRecord.hbm.xml
+				</value>
+				
+				<value>com/sclk/scwms/model/SerialNumber.hbm.xml</value>
+				<value>com/sclk/scwms/model/Charge.hbm.xml</value>
+				<value>com/sclk/scwms/model/ChargeDetail.hbm.xml</value>
+				<value>com/sclk/scwms/model/ChargeRecord.hbm.xml</value>
+				<value>com/sclk/scwms/model/SystemLog.hbm.xml</value></list>
+		</property></bean>
+	<bean id="SyscodeDAO" class="com.sclk.scwms.dao.SyscodeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WarehouseDAO" class="com.sclk.scwms.dao.WarehouseDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CargoDAO" class="com.sclk.scwms.dao.CargoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CustomerDAO" class="com.sclk.scwms.dao.CustomerDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="ContractDAO" class="com.sclk.scwms.dao.ContractDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="StockRecordDAO" class="com.sclk.scwms.dao.StockRecordDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="UsersDAO" class="com.sclk.scwms.dao.UsersDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CargoRecordDAO"
+		class="com.sclk.scwms.dao.CargoRecordDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MonthTotalDAO"
+		class="com.sclk.scwms.dao.MonthTotalDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LocationDAO" class="com.sclk.scwms.dao.LocationDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MonthWarehouseDAO" class="com.sclk.scwms.dao.MonthWarehouseDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TagsCargoDAO" class="com.sclk.scwms.dao.TagsCargoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TagsDAO" class="com.sclk.scwms.dao.TagsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="PostionRecordDAO"
+		class="com.sclk.scwms.dao.PostionRecordDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="SerialNumberDAO"
+		class="com.sclk.scwms.dao.SerialNumberDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="ChargeDAO" class="com.sclk.scwms.dao.ChargeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ChargeDetailDAO" class="com.sclk.scwms.dao.ChargeDetailDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ChargeRecordDAO"
+		class="com.sclk.scwms.dao.ChargeRecordDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SystemLogDAO" class="com.sclk.scwms.dao.SystemLogDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="syscodeManager"
+		class="com.sclk.scwms.service.SyscodeManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="SyscodeDAO" />
+		</property>
+	</bean>
+	<bean id="customerManager"
+		class="com.sclk.scwms.service.CustomerManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="CustomerDAO" />
+		</property>
+	</bean>
+	<bean id="cargoManager"
+		class="com.sclk.scwms.service.CargoManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="CargoDAO" />
+		</property>
+		<property name="monthTotalDAO">
+			<ref bean="MonthTotalDAO" />
+		</property>
+		<property name="syscodeManager">
+			<ref bean="syscodeManager" />
+		</property>
+		<property name="customerManager">
+			<ref bean="customerManager" />
+		</property>
+		<property name="monthWarehouseManager">
+			<ref bean="monthWarehouseManager" />
+		</property>
+		<property name="stockRecordDAO">
+			<ref bean="StockRecordDAO" />
+		</property>
+		<property name="warehouseManager">
+			<ref bean="warehouseManager" />
+		</property>
+	</bean>
+	<bean id="warehouseManager"
+		class="com.sclk.scwms.service.WarehouseManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="WarehouseDAO" />
+		</property>
+		<property name="syscodeManager">
+			<ref bean="syscodeManager" />
+		</property>
+		<property name="locationDAO">
+			<ref bean="LocationDAO" />
+		</property>
+	</bean>
+	<bean id="contractManager"
+		class="com.sclk.scwms.service.ContractManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="ContractDAO" />
+		</property>
+	</bean>
+	<bean id="userManager"
+		class="com.sclk.scwms.service.UserManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="UsersDAO" />
+		</property>
+	</bean>
+	
+	<bean id="stockRecordManager"
+		class="com.sclk.scwms.service.StockRecordManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="StockRecordDAO" />
+		</property>
+		<property name="serialNumberDAO">
+			<ref bean="SerialNumberDAO" />
+		</property>
+		<property name="chargeRecordDAO">
+			<ref bean="ChargeRecordDAO" />
+		</property>
+		<property name="cargoManager">
+			<ref bean="cargoManager" />
+		</property>
+		<property name="syscodeManager">
+			<ref bean="syscodeManager" />
+		</property>
+		<property name="warehouseManager">
+			<ref bean="warehouseManager" />
+		</property>
+		<property name="customerManager">
+			<ref bean="customerManager" />
+		</property>
+	</bean>
+	
+	<bean id="monthTotalManager"
+		class="com.sclk.scwms.service.MonthTotalManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="MonthTotalDAO" />
+		</property>
+		<property name="cargoDAO">
+			<ref bean="CargoDAO" />
+		</property>
+		
+	</bean>
+	<bean id="monthWarehouseManager"
+		class="com.sclk.scwms.service.MonthWarehouseManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="MonthWarehouseDAO" />
+		</property>
+		<property name="cargoDAO">
+			<ref bean="CargoDAO" />
+		</property>
+		<property name="warehouseDAO">
+			<ref bean="WarehouseDAO" />
+		</property>
+		
+	</bean>
+	<bean id="stockManager"
+		class="com.sclk.scwms.service.StockManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="StockRecordDAO" />
+		</property>
+		<property name="syscodeManager">
+			<ref bean="syscodeManager" />
+		</property>
+		<property name="cargoManager">
+			<ref bean="cargoManager" />
+		</property>
+	</bean>
+	<bean id="tagsCargoManager"
+		class="com.sclk.scwms.service.TagsCargoManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="tagsDAO">
+			<ref bean="TagsDAO" />
+		</property>
+		<property name="tagsCargoDAO">
+			<ref bean="TagsCargoDAO" />
+		</property>
+		
+	</bean>
+	
+	<bean id="stockPostionManager"
+		class="com.sclk.scwms.service.StockPostionManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="postionRecordDAO">
+			<ref bean="PostionRecordDAO" />
+		</property>
+		
+	</bean>
+	<bean id="chargeManager"
+		class="com.sclk.scwms.service.ChargeManager" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="dao">
+			<ref bean="ChargeDAO" />
+		</property>
+		<property name="syscodeManager">
+			<ref bean="syscodeManager" />
+		</property>
+		<property name="warehouseManager">
+			<ref bean="warehouseManager" />
+		</property>
+		<property name="stockRecordDAO">
+			<ref bean="StockRecordDAO" />
+		</property>
+		<property name="chargeDetailDAO">
+			<ref bean="ChargeDetailDAO" />
+		</property>
+		<property name="chargeRecordDAO">
+			<ref bean="ChargeRecordDAO" />
+		</property>
+	</bean>
+	<bean id="systemLogManager" class="com.sclk.scwms.service.SystemLogManager" autowire="byName">
+		<property name="systemLogDAO">
+			<ref bean="SystemLogDAO" />
+		</property>
+		
+	</bean>
+	
+	<bean id="syscodeEditAction"
+		class="com.sclk.scwms.web.action.SyscodeEditAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="manager">
+			<ref bean="syscodeManager" />
+		</property>
+	</bean>
+	<bean id="syscodeAction"
+		class="com.sclk.scwms.web.action.SyscodeAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="manager">
+			<ref bean="syscodeManager" />
+		</property>
+	</bean>
+	
+	
+	<bean id="customerAction"
+		class="com.sclk.scwms.web.action.CustomerAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="manager">
+			<ref bean="customerManager" />
+		</property>
+		
+	</bean>
+	<bean id="customerEditAction"
+		class="com.sclk.scwms.web.action.CustomerEditAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="manager">
+			<ref bean="customerManager" />
+		</property>
+		<property name="scmanager">
+			<ref bean="syscodeManager" />
+		</property>
+	</bean>
+	
+	
+	<bean id="cargoAction"
+		class="com.sclk.scwms.web.action.CargoAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="manager">
+			<ref bean="cargoManager" />
+		</property>
+	</bean>
+	<bean id="warehouseAction"
+		class="com.sclk.scwms.web.action.WarehouseAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="manager">
+			<ref bean="warehouseManager" />
+		</property>
+	</bean>
+	<bean id="contractAction"
+		class="com.sclk.scwms.web.action.ContractAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="manager">
+			<ref bean="contractManager" />
+		</property>
+	</bean>
+	
+	
+	<bean id="userAction"
+		class="com.sclk.scwms.web.action.UserAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="manager">
+			<ref bean="userManager" />
+		</property>
+		
+	</bean>
+	<bean id="userEditAction"
+		class="com.sclk.scwms.web.action.UserEditAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="manager">
+			<ref bean="userManager" />
+		</property>
+		<property name="scmanager">
+			<ref bean="syscodeManager" />
+		</property>
+	</bean>
+	<bean id="stockWarehouseAction"
+		class="com.sclk.scwms.web.action.StockWarehouseAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="warehouseManager">
+			<ref bean="warehouseManager" />
+		</property>
+	</bean>
+	<bean id="stockAnalyzeAction"
+		class="com.sclk.scwms.web.action.StockAnalyzeAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="manager">
+			<ref bean="stockManager" />
+		</property>
+		<property name="syscodeManager">
+			<ref bean="syscodeManager" />
+		</property>
+		<property name="warehouseManager">
+			<ref bean="warehouseManager" />
+		</property>
+		<property name="customerManager">
+			<ref bean="customerManager" />
+		</property>
+		<property name="tagsCargoManager">
+			<ref bean="tagsCargoManager" />
+		</property>
+	</bean>
+	<bean id="customerInventoryAction"
+		class="com.sclk.scwms.web.action.CustomerInventoryAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="stockRecordManager">
+			<ref bean="stockRecordManager" />
+		</property>
+		<property name="customerManager">
+			<ref bean="customerManager" />
+		</property>
+		
+	</bean>
+	<bean id="stockPostionAction"
+		class="com.sclk.scwms.web.action.StockPostionAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="stockPostionManager">
+			<ref bean="stockPostionManager" />
+		</property>
+		
+	</bean>
+	<bean id="chargeAction"
+		class="com.sclk.scwms.web.action.ChargeAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="chargeManager">
+			<ref bean="chargeManager" />
+		</property>
+		<property name="warehouseManager">
+			<ref bean="warehouseManager" />
+		</property>
+		<property name="scmanager">
+			<ref bean="syscodeManager" />
+		</property>
+		<property name="customerManager">
+			<ref bean="customerManager" />
+		</property>
+		
+	</bean>
+	<bean id="loginAction"
+		class="com.sclk.scwms.web.action.LoginAction"
+		abstract="false" lazy-init="default" autowire="default" dependency-check="default">
+		<property name="systemLogManager">
+			<ref bean="systemLogManager" />
+		</property>
+		
+	</bean>
+	<bean id="onlineUserListener" class="com.sclk.scwms.common.OnlineUserListener" autowire="byName">
+		<property name="systemLogManager">
+			<ref bean="systemLogManager" />
+		</property>
+		
+	</bean>
+	</beans>

@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="syscodeForm" type="com.sclk.scwms.web.form.SyscodeForm" />
+    <form-bean name="syscodeEditForm" type="com.sclk.scwms.web.form.SyscodeEditForm" />
+    <form-bean name="customerEditForm" type="com.sclk.scwms.web.form.CustomerEditForm" />
+    <form-bean name="cargoEditForm" type="com.sclk.scwms.web.form.CargoEditForm" />
+    <form-bean name="warehouseEditForm" type="com.sclk.scwms.web.form.WarehouseEditForm" />
+    <form-bean name="customerForm" type="com.sclk.scwms.web.form.CustomerForm" />
+    <form-bean name="cargoForm" type="com.sclk.scwms.web.form.CargoForm" />
+    <form-bean name="warehouseForm" type="com.sclk.scwms.web.form.WarehouseForm" />
+    <form-bean name="locationForm" type="com.sclk.scwms.web.form.LocationForm" />
+    <form-bean name="locationEditForm" type="com.sclk.scwms.web.form.LocationEditForm" />
+    <form-bean name="contractForm" type="com.sclk.scwms.web.form.ContractForm" />
+    <form-bean name="contractEditForm" type="com.sclk.scwms.web.form.ContractEditForm" />
+    <form-bean name="stockInForm" type="com.sclk.scwms.web.form.StockInForm" />
+    <form-bean name="stockOutForm" type="com.sclk.scwms.web.form.StockOutForm" />
+    <form-bean name="stockTransferForm" type="com.sclk.scwms.web.form.StockTransferForm" />
+    <form-bean name="stockEqualForm" type="com.sclk.scwms.web.form.StockEqualForm" />
+    <form-bean name="userForm" type="com.sclk.scwms.web.form.UserForm" />
+    <form-bean name="userEditForm" type="com.sclk.scwms.web.form.UserEditForm" />
+    <form-bean name="stockItemsForm" type="com.sclk.scwms.web.form.StockItemsForm" />
+    <form-bean name="stockCustomerForm" type="com.sclk.scwms.web.form.StockCustomerForm" />
+   	<form-bean name="dailyBalanceForm" type="com.sclk.scwms.web.form.DailyBalanceForm" />
+   	<form-bean name="detailChargeForm" type="com.sclk.scwms.web.form.DetailChargeForm" />
+   	<form-bean name="monthTotalForm" type="com.sclk.scwms.web.form.MonthTotalForm" />
+   	<form-bean name="monthTotalEditForm" type="com.sclk.scwms.web.form.MonthTotalEditForm" />
+   	<form-bean name="monthWarehouseEditForm" type="com.sclk.scwms.web.form.MonthWarehouseEditForm" />
+   	<form-bean name="stockWarehouseForm" type="com.sclk.scwms.web.form.StockWarehouseForm" />
+  	<form-bean name="stockAnalyzeForm" type="com.sclk.scwms.web.form.StockAnalyzeForm" />
+    <form-bean name="customerInventoryForm" type="com.sclk.scwms.web.form.CustomerInventoryForm" />
+  	<form-bean name="warehouseInventoryForm" type="com.sclk.scwms.web.form.WarehouseInventoryForm" />
+  	<form-bean name="loginForm" type="com.sclk.scwms.web.form.LoginForm" />
+  	<form-bean name="workBenchForm" type="com.sclk.scwms.web.form.WorkBenchForm" />
+  	<form-bean name="stockPostionForm" type="com.sclk.scwms.web.form.StockPostionForm" />
+  	<form-bean name="chargeForm" type="com.sclk.scwms.web.form.ChargeForm" />
+    <form-bean name="chargeDetailForm" type="com.sclk.scwms.web.form.ChargeDetailForm" />
+    <form-bean name="systemLogForm" type="com.sclk.scwms.web.form.SystemLogForm" />
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="syscodeForm"
+      name="syscodeForm"
+      parameter="method"
+      path="/syscode"
+      scope="request"
+      type="com.sclk.scwms.web.action.SyscodeAction"
+      validate="false">
+      
+      <forward name="view" path="/jsp/syscode.jsp" />
+     
+    </action>
+    <action
+      attribute="syscodeEditForm"
+      input="/WEB-INF/jsp/syscodeEdit.jsp"
+      name="syscodeEditForm"
+      path="/syscodeEdit"
+      scope="request"
+      parameter="method"
+      type="com.sclk.scwms.web.action.SyscodeEditAction" >
+      <forward name="init" path="/jsp/syscodeEdit.jsp" />
+      <forward name="save" path="/syscode.do?method=view" />
+     </action>
+    <action
+      attribute="customerEditForm"
+      input="/jsp/customerEdit.jsp"
+      name="customerEditForm"
+      parameter="method"
+      path="/customerEdit"
+      scope="request"
+      type="com.sclk.scwms.web.action.CustomerEditAction">
+      <forward name="init" path="/jsp/customerEdit.jsp" />
+      <forward name="success" path="/customer.do?method=view" />
+      <forward name="view" path="/jsp/customerView.jsp" />
+    </action>
+    <action
+      attribute="cargoEditForm"
+      input="/jsp/cargoEdit.jsp"
+      name="cargoEditForm"
+      parameter="method"
+      path="/cargoEdit"
+      scope="request"
+      type="com.sclk.scwms.web.action.CargoEditAction">
+      <forward name="init" path="/jsp/cargoEdit.jsp" />
+      <forward name="success" path="/cargo.do?method=view" />
+    </action>
+    <action
+      attribute="warehouseEditForm"
+      input="/jsp/warehouseEdit.jsp"
+      name="warehouseEditForm"
+      parameter="method"
+      path="/warehouseEdit"
+      scope="request"
+      type="com.sclk.scwms.web.action.WarehouseEditAction">
+      <forward name="init" path="/jsp/warehouseEdit.jsp" />
+      <forward name="initSub" path="/jsp/warehouseSubEdit.jsp" />
+      <forward name="success" path="/warehouse.do?method=view" />
+    </action>
+    <action
+      attribute="customerForm"
+      input="/jsp/customer.jsp"
+      name="customerForm"
+      path="/customer"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.CustomerAction" >
+      <forward name="view" path="/jsp/customer.jsp" />
+    </action>
+
+ 	<action
+      attribute="cargoForm"
+      input="/jsp/cargo.jsp"
+      name="cargoForm"
+      path="/cargo"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.CargoAction" >
+      <forward name="view" path="/jsp/cargo.jsp" />
+      <forward name="readOnly" path="/jsp/cargoView.jsp" />
+      <forward name="items" path="/jsp/cargoItems.jsp" />
+      <forward name="query" path="/jsp/cargoView.jsp" />
+    </action>
+    
+    <action
+      attribute="warehouseForm"
+      input="/jsp/warehouse.jsp"
+      name="warehouseForm"
+      path="/warehouse"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.WarehouseAction" >
+      <forward name="view" path="/jsp/warehouse.jsp" />
+      <forward name="subView" path="/jsp/warehouseSub.jsp" />
+    </action>
+    
+    <action
+      attribute="locationForm"
+      input="/jsp/location.jsp"
+      name="locationForm"
+      path="/location"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.LocationAction" >
+      <forward name="view" path="/jsp/location.jsp" />
+     
+    </action>
+    <action
+      attribute="locationEditForm"
+      input="/jsp/locationEdit.jsp"
+      name="locationEditForm"
+      path="/locationEdit"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.LocationEditAction" >
+      <forward name="init" path="/jsp/locationEdit.jsp" />
+      <forward name="success" path="/location.do?method=view" />
+    </action>
+    <action
+      attribute="contractForm"
+      input="/jsp/contract.jsp"
+      name="contractForm"
+      path="/contract"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.ContractAction" >
+      <forward name="view" path="/jsp/contract.jsp" />
+    </action>
+    <action
+      attribute="contractEditForm"
+      input="/jsp/contractEdit.jsp"
+      name="contractEditForm"
+      path="/contractEdit"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.ContractEditAction" >
+      <forward name="init" path="/jsp/contractEdit.jsp" />
+      
+    </action>
+    <action
+      attribute="stockInForm"
+      input="/jsp/stockIn.jsp"
+      name="stockInForm"
+      path="/stockIn"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockInAction">
+      <forward name="init" path="/jsp/stockIn.jsp" />
+      <forward name="remain" path="/jsp/stockIn.jsp" />
+      <forward name="success" path="/stockIn.do?method=init" />
+      <forward name="delete" path="/jsp/stockIn.jsp" />
+      <forward name="location" path="/jsp/3-2_input.jsp" />
+      
+      <forward name="save" path="/stockIn.do?method=save" />
+      <forward name="false" path="/jsp/stockIn.jsp" />
+      <forward name="initVerify" path="/jsp/verify.jsp" />
+      
+      <forward name="print" path="/jsp/stockInPrint.jsp"></forward>
+    </action>
+    <action
+      attribute="stockPostionForm"
+      input="/jsp/stockIn.jsp"
+      name="stockPostionForm"
+      path="/stockPostion"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockPostionAction">
+      <forward name="init" path="/jsp/3-2_input.jsp" />
+      <forward name="add" path="/stockIn.do?method=remain" />
+      <forward name="check" path="/jsp/3-2.jsp" />
+    </action>
+    <action
+      attribute="stockOutForm"
+      input="/jsp/stockOut.jsp"
+      name="stockOutForm"
+      path="/stockOut"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockOutAction">
+      <forward name="init" path="/jsp/stockOut.jsp" />
+      <forward name="remain" path="/jsp/stockOut.jsp" />
+      <forward name="success" path="/stockOut.do?method=init" />
+      
+       <forward name="save" path="/stockOut.do?method=save" />
+      <forward name="false" path="/jsp/stockOut.jsp" />
+      <forward name="initVerify" path="/jsp/verify.jsp" />
+      
+       <forward name="print" path="/jsp/stockOutPrint.jsp"></forward>
+      
+    </action>
+    
+    <action
+      attribute="stockTransferForm"
+      input="/jsp/stockTransfer.jsp"
+      name="stockTransferForm"
+      path="/stockTransfer"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockTransferAction">
+      <forward name="init" path="/jsp/stockTransfer.jsp" />
+      <forward name="remain" path="/jsp/stockTransfer.jsp" />
+      <forward name="success" path="/stockTransfer.do?method=init" />
+    </action>
+    
+    <action
+      attribute="stockEqualForm"
+      input="/jsp/stockEqual.jsp"
+      name="stockEqualForm"
+      path="/stockEqual"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockEqualAction">
+      <forward name="init" path="/jsp/stockEqual.jsp" />
+      <forward name="remain" path="/jsp/stockEqual.jsp" />
+      <forward name="success" path="/stockEqual.do?method=init" />
+    </action>
+    
+    <action
+      attribute="cargoEditForm"
+      input="/jsp/stockIn.jsp"
+      name="cargoEditForm"
+      path="/addStockInCargo"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.CargoEditAction">
+      <forward name="init" path="/jsp/stockInCargoEdit.jsp" />
+      <forward name="add" path="/stockIn.do?method=remain" />
+      <forward name="addPurchase" path="/purchase.do?method=remain" />
+    </action>
+     <action
+      attribute="userForm"
+      input="/jsp/user.jsp"
+      name="userForm"
+      path="/user"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.UserAction" >
+      <forward name="view" path="/jsp/user.jsp" />
+      <forward name="item" path="/jsp/userItem.jsp" />
+      <forward name="query" path="/jsp/userItem.jsp" />
+    </action>
+    
+     <action
+      attribute="userEditForm"
+      input="/jsp/userEdit.jsp"
+      name="userEditForm"
+      parameter="method"
+      path="/userEdit"
+      scope="request"
+      type="com.sclk.scwms.web.action.UserEditAction">
+      <forward name="init" path="/jsp/userEdit.jsp" />
+      <forward name="success" path="/user.do?method=view" />
+      <forward name="userSetup" path="/jsp/userSetup.jsp" />
+      <forward name="message" path="/jsp/userSetup.jsp" />
+    </action>
+    
+    <action
+      attribute="stockItemsForm"
+      input="/jsp/stockItems.jsp"
+      name="stockItemsForm"
+      path="/stockItems"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockItemsAction">
+      <forward name="view" path="/jsp/stockItems.jsp" />
+      <forward name="all" path="/jsp/stockItemsAll.jsp" />
+      <forward name="businessQuantityChart" path="/jsp/businessQuantityChart.jsp" />
+      <forward name="cargoRecord" path="/jsp/cargoRecord.jsp" />
+      
+      <forward name="deleteConfirm" path="/jsp/deleteStockItems.jsp" />
+      <forward name="delete" path="/jsp/stockItemsAll.jsp" />
+      <forward name="customerStockItems" path="/jsp/customerStockItems.jsp" />
+      <forward name="chart" path="/jsp/stockItemsChart.jsp" />
+     </action>
+     <action
+      attribute="stockCustomerForm"
+      input="/jsp/stockCustomer.jsp"
+      name="stockCustomerForm"
+      path="/stockCustomer"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockCustomerAction">
+      <forward name="view" path="/jsp/stockCustomer.jsp" />
+     </action>
+     <action
+      attribute="dailyBalanceForm"
+      input="/jsp/dailyBalance.jsp"
+      name="dailyBalanceForm"
+      path="/dailyBalance"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.DailyBalanceAction">
+      <forward name="view" path="/jsp/dailyBalance.jsp" />
+     </action>
+     <action
+      attribute="detailChargeForm"
+      input="/jsp/detailCharge.jsp"
+      name="detailChargeForm"
+      path="/detailCharge"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.DetailChargeAction">
+      <forward name="view" path="/jsp/detailCharge.jsp" />
+     </action>
+     <action
+      attribute="monthTotalForm"
+      input="/jsp/monthTotal.jsp"
+      name="monthTotalForm"
+      path="/monthTotal"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.MonthTotalAction">
+      <forward name="view" path="/jsp/monthTotal.jsp" />
+     </action>
+     
+     <action
+      attribute="monthTotalEditForm"
+      input="/jsp/monthTotalEdit.jsp"
+      name="monthTotalEditForm"
+      parameter="method"
+      path="/monthTotalEdit"
+      scope="request"
+      type="com.sclk.scwms.web.action.MonthTotalEditAction">
+      <forward name="init" path="/jsp/monthTotalEdit.jsp" />
+      <forward name="success" path="/monthTotal.do?method=view" />
+     </action>
+    <action
+      attribute="monthWarehouseEditForm"
+      input="/jsp/monthWarehouseEdit.jsp"
+      name="monthWarehouseEditForm"
+      parameter="method"
+      path="/monthWarehouseEdit"
+      scope="request"
+      type="com.sclk.scwms.web.action.MonthWarehouseEditAction">
+      <forward name="init" path="/jsp/monthWarehouseEdit.jsp" />
+      <forward name="success" path="/monthTotal.do?method=view" />
+     </action>
+     <action
+      attribute="stockWarehouseForm"
+      input="/jsp/stockWarehouse.jsp"
+      name="stockWarehouseForm"
+      path="/stockWarehouse"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockWarehouseAction">
+      <forward name="view" path="/jsp/stockWarehouse.jsp" />
+      <forward name="chart" path="/jsp/stockWarehouseChart.jsp" />
+     </action>
+     
+     <action
+      attribute="stockAnalyzeForm"
+      input="/jsp/reportMonthly.jsp"
+      name="stockAnalyzeForm"
+      path="/stockAnalyze"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockAnalyzeAction">
+      <forward name="view" path="/jsp/reportMonthly.jsp" />
+      <forward name="chart" path="/jsp/reportMonthlyChart.jsp" />
+      <forward name="countChart" path="/jsp/reportMonthlyCountChart.jsp" />
+      <forward name="sumChart" path="/jsp/reportMonthlySumChart.jsp" />
+      <forward name="category" path="/jsp/reportCategory.jsp" />
+      <forward name="categoryChart" path="/jsp/reportCategoryChart.jsp" />
+      <forward name="multiCargo" path="/jsp/multiCargo.jsp" />
+      <forward name="stockOverview" path="/jsp/stockOverview.jsp" />
+      <forward name="customerStockOverview" path="/jsp/customerStockOverview.jsp" />
+       <forward name="summary" path="/jsp/reportSummary.jsp" />
+     </action>
+     
+     <action
+      attribute="customerInventoryForm"
+      input="/jsp/customerInventory.jsp"
+      name="customerInventoryForm"
+      path="/customerInventory"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.CustomerInventoryAction">
+      <forward name="view" path="/jsp/customerInventory.jsp" />
+      <forward name="inventory" path="/jsp/inventory.jsp" />
+     
+     </action>
+     
+     <action
+      attribute="warehouseInventoryAction"
+      input="/jsp/warehouseInventory.jsp"
+      name="warehouseInventoryForm"
+      path="/warehouseInventory"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.WarehouseInventoryAction">
+      <forward name="view" path="/jsp/warehouseInventory.jsp" />
+     
+     </action>
+     <action
+      attribute="loginAction"
+      input="/jsp/login.jsp"
+      name="loginForm"
+      path="/login"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.LoginAction">
+      <forward name="view" path="/jsp/login.jsp" />
+      <forward name="success" path="/workBench.do?method=view" />
+      <forward name="failed" path="/jsp/login.jsp" />
+     </action>
+     
+     <action
+      attribute="workBenchAction"
+      input="/jsp/workBench.jsp"
+      name="workBenchForm"
+      path="/workBench"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.WorkBenchAction">
+      <forward name="view" path="/jsp/workBench.jsp" />
+     
+     </action>
+     
+      <action
+      attribute="chargeForm"
+      input="/jsp/charge.jsp"
+      name="chargeForm"
+      path="/charge"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.ChargeAction">
+      <forward name="init" path="/jsp/charge.jsp" />
+      <forward name="initChargeEdit" path="/jsp/chargeEdit.jsp" />
+      <forward name="chargeEdit" path="/jsp/chargeEdit.jsp" />
+     </action>
+    <action
+      attribute="chargeDetailForm"
+      input="/jsp/chargeDetail.jsp"
+      name="chargeDetailForm"
+      path="/chargeDetail"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.ChargeDetailAction">
+      <forward name="query" path="/jsp/chargeDetail.jsp" />
+      <forward name="initPayment" path="/jsp/payment.jsp" />
+      <forward name="success" path="/chargeDetail.do?method=query" redirect="true"/>
+      <forward name="initCreateChargeDetailRecord" path="/jsp/createChargeDetailRecord.jsp" />
+    </action>
+    <action
+      attribute="systemLogForm"
+      input="/jsp/systemLog.jsp"
+      name="systemLogForm"
+      path="/systemLog"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.SystemLogAction">
+      <forward name="query" path="/jsp/systemLog.jsp" />
+      <forward name="onlineUsers" path="/jsp/onlineUsers.jsp" />
+    </action>
+     
+     <!-- 
+     <action
+      attribute="stockInForm"
+      input="/jsp/purchase.jsp"
+      name="stockInForm"
+      path="/purchase"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockInAction">
+      <forward name="init" path="/jsp/purchase.jsp" />
+      <forward name="remain" path="/jsp/purchase.jsp" />
+      <forward name="success" path="/stockIn.do?method=init" />
+      <forward name="delete" path="/jsp/stockIn.jsp" />
+      <forward name="location" path="/jsp/3-2_input.jsp" />
+    </action>
+     
+     <action
+      attribute="stockOutForm"
+      input="/jsp/sales.jsp"
+      name="stockOutForm"
+      path="/sales"
+      scope="request"
+      parameter="method" 
+      type="com.sclk.scwms.web.action.StockOutAction">
+      <forward name="init" path="/jsp/sales.jsp" />
+      <forward name="remain" path="/jsp/sales.jsp" />
+      <forward name="success" path="/stockOut.do?method=init" />
+    </action>
+     --> 
+     
+  </action-mappings>
+  <controller processorClass="org.springframework.web.struts.AutowiringRequestProcessor" /> 
+  <message-resources parameter="com.sclk.scwms.web.ApplicationResources" />
+</struts-config>
+

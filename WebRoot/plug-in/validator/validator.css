@@ -1,0 +1,12 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.errorMessage{width: 185px;
+			  margin-left:5px; 
+			  padding:2px 2px 2px 25px;
+			  background-image: url(images/warning.gif);
+			  background-repeat: no-repeat;
+			  background-position: 5px;
+			  background-color: #FFF2F2;
+			  border: 1px solid #FF8080;
+			  font-size: 12px;
+			  display:none;}

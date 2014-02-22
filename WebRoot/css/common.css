@@ -1,0 +1,225 @@
+﻿@charset "utf-8";
+/* CSS Document */
+#main{   
+    margin:0 auto;      
+    width:1000px;
+}
+
+#form_stylized{
+    margin:0 auto;
+    padding:1px;
+    width:450px;
+}
+
+#form_stylized h1 {
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:8px;
+   
+}
+#form_stylized p{
+    font-size:11px;
+    color:#666666;
+    margin-bottom:20px;
+    border-bottom:solid 1px #b7ddf2;
+    padding-bottom:1px;
+}
+
+#form_stylized label{
+    display:block;
+    
+    text-align:right;
+    width:180px;
+    float:left;
+    padding-top: 5px;
+    
+}
+
+#form_stylized input,select,textarea{
+    
+    font-size:14px;  
+    border:solid 1px #aacfe4;
+    width:200px;
+    margin:2px 0 5px 10px;
+}
+#form_stylized .checkbox{
+    
+    font-size:14px;  
+    width:25px;
+    border:0px;
+    margin:2px 0 5px 10px;
+}
+
+#form_stylized SPAN.readonly {
+    
+    font-size:14px;  
+    border:solid 1px #CCCCCC;
+    
+   	display:block;
+    width:200px;
+    margin:2px ;
+    padding: 1px 1px 1px 2px;
+}
+
+
+#form_stylized button{
+    clear:both;
+    margin-left:150px;
+    width:125px;
+    height:31px;
+    background:#666666 url(img/button.png) no-repeat;
+    text-align:center;
+    line-height:31px;
+    color:#FFFFFF;
+    font-size:11px;
+    font-weight:bold;
+}
+/**
+*
+*****/
+table.stockItems {
+	margin: 0 auto;
+	width: 100%;
+	clear: both;
+	border-collapse:collapse;
+}
+
+table.stockItems thead th {
+	
+	padding: 6px 18px 3px 10px;
+	border-bottom: 1px solid #D2D2D2;
+	cursor: pointer;
+	* cursor: hand;
+	background-color: #F5F5F5;
+	font-size: 12px;
+	font-weight:normal;
+}
+
+table.stockItems tfoot th {
+	padding: 3px 10px;
+	border-top: 1px solid black;
+	font-weight: bold;
+}
+.total{padding:12px;font-family:Tahoma;font-size: 14px;font-weight: bold;border-top: 1px solid #000000}
+table.stockItems tr td {
+	empty-cells:show;
+	border-bottom: 1px solid #D2D2D2;
+	font-size:12px;
+	font-family: Tahoma;
+}
+
+table.stockItems td {
+	
+	padding: 10px 10px 10px 10px;
+}
+table.stockItems td.child_td{
+	border: 0px;
+	padding:5px 0px 5px 50px
+	
+}
+table.stockItems span.cargoName{
+	color: #3366CC;
+	font-weight: bold;
+	width: 100px;
+	display: block;	
+	float: left;
+}
+table.stockItems span.cargoUnit{
+	color: #333;
+	display: block;	
+	float: left;
+}
+table.stockItems span.symbol{
+	color: #000;
+	font-weight: bold;
+	width: 10px;
+	display: block;	
+	float: left;
+	margin: 0px 9px
+}
+table.stockItems span.cargoQuantity{
+	color: #000;
+	font-weight: bold;
+	display: block;	
+	float: left;
+}
+table.stockItems span.cargoTotalWeight{
+	color: #000;
+	font-weight: bold;
+	display: block;	
+	float: left;
+}
+	
+table.stockItems td.center {
+	text-align: center;
+}
+/*********
+*****/
+table.style1 {
+	margin: 0 auto;
+	width: 100%;
+	clear: both;
+	border-collapse:collapse;
+}
+
+table.style1 thead th {
+	
+	padding: 6px 18px 3px 10px;
+	border: 1px solid #D2D2D2;
+	cursor: pointer;
+	* cursor: hand;
+	background-color: #F5F5F5;
+	font-size: 12px;
+	font-weight:normal;
+}
+
+table.style1 tr td {
+	empty-cells:show;
+	border: 1px solid #D2D2D2;
+	font-size:12px;
+	font-family: Tahoma;
+	padding:5px;
+}
+
+table.stockItems td {
+	
+	padding: 10px 10px 10px 10px;
+}
+
+table.stockItems span.cargoName{
+	color: #3366CC;
+	font-weight: bold;
+	width: 100px;
+	display: block;	
+	float: left;
+}
+table.stockItems span.cargoUnit{
+	color: #333;
+	display: block;	
+	float: left;
+}
+table.stockItems span.symbol{
+	color: #000;
+	font-weight: bold;
+	width: 10px;
+	display: block;	
+	float: left;
+	margin: 0px 9px
+}
+table.stockItems span.cargoQuantity{
+	color: #000;
+	font-weight: bold;
+	display: block;	
+	float: left;
+}
+table.stockItems span.cargoTotalWeight{
+	color: #000;
+	font-weight: bold;
+	display: block;	
+	float: left;
+}
+	
+table.stockItems td.center {
+	text-align: center;
+}	
+	
